@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const NewsTitle = ({data,activeId}) => {
@@ -9,7 +10,8 @@ const NewsTitle = ({data,activeId}) => {
          <ul key={categorie.category_id}>
            <li  className={`
             ${activeId===categorie.category_id && 'bg-slate-200'  }
-            p-2 rounded-xl font-bold text-center text-md`}> {categorie.category_name}</li>
+            p-2 rounded-xl font-bold text-center text-md`}> <Link href={`/categorie/${categorie.category_id}`}
+            className='bg-green-200 block p-2'>{categorie.category_name}</Link></li>
          </ul>
       )}
       </div>

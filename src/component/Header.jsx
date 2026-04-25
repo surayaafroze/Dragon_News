@@ -8,7 +8,7 @@ import { format } from "date-fns";
 const Header = () => {
   return (
     <div>
-  <div className='flex flex-col justify-center items-center'>
+  <div className='flex flex-col justify-center items-center space-y-4'>
     <Image
   
   src={image}

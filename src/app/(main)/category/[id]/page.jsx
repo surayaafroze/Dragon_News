@@ -29,7 +29,7 @@ const data = await fetchData()
 
 {/* 2nd div */}
     <div className="col-span-6  min-h-full">
-      <h2 className='font-bold text-xl'>Dragon News Home</h2>
+      <h2 className='font-bold text-xl mb-4'>Dragon News Home</h2>
     <div className="space-y-15">
       {news.map (n=> <NewsCard key={n._id} 
       n={n}

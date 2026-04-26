@@ -16,7 +16,7 @@ const NewsCard = ({n}) => {
             <Image
             className='rounded-full p-2'
           src={author.img}
-          alt={author.name}
+          alt={title}
           width={60}
           height={60}
           ></Image>
@@ -44,7 +44,7 @@ height={200}
 </Image>
  
  <p className='p-4 text-[#706F6F] text-[16px] line-clamp-3'>{details}</p>
- <div className='mt-6'><Link href="/details"><button className='btn '>See 
+ <div className='mt-6'><Link href={`/details/${n._id}`}><button className='btn '>See 
   details</button></Link></div>
 
 <div className='flex justify-between items-center p-3'>

@@ -28,12 +28,12 @@ const data = await fetchData()
 
 
 {/* 2nd div */}
-    <div className="bg-yellow-100 col-span-6 font-bold text-xl min-h-full">
-      <h2>Dragon News Home</h2>
-    <div className="space-y-4">
+    <div className="col-span-6  min-h-full">
+      <h2 className='font-bold text-xl'>Dragon News Home</h2>
+    <div className="space-y-15">
       {news.map (n=> <NewsCard key={n._id} 
       n={n}
-      className="p-4 rounded-2xl border">
+      className="p-4 rounded-xl ">
       
       </NewsCard>)}
     </div>

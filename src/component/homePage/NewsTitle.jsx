@@ -9,9 +9,9 @@ const NewsTitle = ({data,activeId}) => {
         {data.map(categorie=> 
          <ul key={categorie.category_id}>
            <li  className={`
-            ${activeId===categorie.category_id && 'bg-slate-200'  }
+            ${activeId===categorie.category_id && 'bg-purple-500 text-white'  }
             p-2 rounded-xl font-bold text-center text-md`}> <Link href={`/category/${categorie.category_id}`}
-            className='bg-green-200 block p-2'>{categorie.category_name}</Link></li>
+            className=' block'>{categorie.category_name}</Link></li>
          </ul>
       )}
       </div>

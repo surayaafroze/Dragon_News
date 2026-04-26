@@ -1,18 +1,9 @@
+import NewsCard from '@/component/homePage/NewsCard';
 import NewsTitle from '@/component/homePage/NewsTitle';
 import RightSideBar from '@/component/homePage/RightSideBar';
+import { fetchData, middleNewsFetchData } from '@/lib/FetchData';
 import React from 'react';
 
-const fetchData = async()=>{
-  const res =await fetch("https://openapi.programming-hero.com/api/news/categories");
-  const data =await res.json()
- return data.data.news_category;
- 
-}
-const middleNewsFetchData = async(category_id)=>{
-  const res =await fetch (`https://openapi.programming-hero.com/api/news/category/${category_id}`);
-  const data =await res.json()
- return data.data;
-}
 
 
 
@@ -30,7 +21,7 @@ const data = await fetchData()
      <div className="grid grid-cols-12 justify-center items-center max-w-7xl mx-auto my-15 gap-4 ">
     {/* 1st div */}
     <div className=" col-span-3 min-h-full">
-      <NewsTitle data={data} activeId={null}></NewsTitle>
+      <NewsTitle data={data} activeId={id}></NewsTitle>
     </div>
 
 
@@ -40,9 +31,11 @@ const data = await fetchData()
     <div className="bg-yellow-100 col-span-6 font-bold text-xl min-h-full">
       <h2>Dragon News Home</h2>
     <div className="space-y-4">
-      {news.map (n=> <div key={n._id} className="p-4 rounded-2xl border">
-        <p>{n.title}</p>
-      </div>)}
+      {news.map (n=> <NewsCard key={n._id} 
+      n={n}
+      className="p-4 rounded-2xl border">
+      
+      </NewsCard>)}
     </div>
     </div>
 

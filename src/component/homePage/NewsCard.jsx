@@ -16,7 +16,7 @@ const NewsCard = ({n}) => {
             <Image
             className='rounded-full p-2'
           src={author.img}
-          alt={title}
+          alt={author.name}
           width={60}
           height={60}
           ></Image>

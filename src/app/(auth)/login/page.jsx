@@ -5,10 +5,7 @@ import React from 'react';
 
 const LoginPage = () => {
   const handelerFunction =(e)=>{
-    e.preventDefault()
-    const email =e.target.email.value
-    const password =e.target.password.value
-   console.log(email,password)
+   
   }
   return (
    <div className=' bg-slate-100 mt-5 '>

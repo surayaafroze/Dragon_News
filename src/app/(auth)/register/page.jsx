@@ -1,12 +1,21 @@
 'use client'
 
+import { authClient } from '@/lib/auth-client';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-const registerPage = () => {
+const RegisterPage = () => {
   const { register,handleSubmit,formState: { errors }} = useForm()
-  const handelerFunction =(data)=>{
-   console.log(data)
+  const registerHandelerFunction =async (data)=>{
+ const {email,name,photo,password}=data
+ const { data:res,error} = await authClient.signUp.email({
+    name: name,
+    email: email, 
+    password: password, 
+    image: photo,
+    callbackURL: "/",
+ });
+ console.log(res,error)
   }
   return (
    <div className=' bg-slate-100 mt-5 '>
@@ -14,7 +23,7 @@ const registerPage = () => {
     <div className='bg-white p-4 rounded-xl py-20 px-7'> 
       <h2 className='text-3xl font-bold mb-4'>Register your account</h2>
 
-      <form className='space-y-4' onSubmit={handleSubmit(handelerFunction)}>
+      <form className='space-y-4' onSubmit={handleSubmit(registerHandelerFunction)}>
         <fieldset className="fieldset">
   <legend className="fieldset-legend"> Your name</legend>
   <input type="text" {...register("name" , { required: 'name filed is required' })} 
@@ -47,4 +56,4 @@ const registerPage = () => {
   );
 };
 
-export default registerPage;
+export default RegisterPage;
